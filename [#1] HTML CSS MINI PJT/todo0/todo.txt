@@ -1,0 +1,41 @@
+<!-- 
+1. 로딩 이미지 넣기 
+2. 엔터키 이벤트 처리 - 실패
+3. navbar search 구현
+-->
+
+
+// 사용자가 선택한 입력 데이터를 객체를 만들어서 push
+        const makePrompt = function () {
+            // 취미 데이터 읽어오기
+            let hobbyInput = document.getElementById("hobby");
+            let hobby = hobbyInput.value;
+        
+            // 성별 데이터 읽어오기
+            let genderInput = document.getElementById("gender");
+            let gender = genderInput.value;
+        
+            // mbti 데이터 읽어오기
+            let mbtiInput = document.getElementById("mbti");
+            let mbti = mbtiInput.value;
+        
+            // 전공여부 데이터 읽어오기
+            let majorInput = document.getElementById("major");
+            let major = majorInput.value;
+        
+            // 개발경험 데이터 읽어오기
+            let devExpInput = document.getElementById("dev-exp");
+            let devExp = devExpInput.value;
+
+            // 주 사용 언어 데이터 읽어오기
+            let mainLanInput = document.getElementById("main-lan");
+            let mainLan = mainLanInput.value;
+
+            // 기술스택 데이터 읽어오기
+            let techStackInput = document.getElementById("tech-stack");
+            let techStack = techStackInput.value;
+        
+            // 기타입력 및 최종질문 데이터 읽어오기
+            let etcInput = document.getElementsByName("textarea1");
+            let etc = etcInput.value
+        }
