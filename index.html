@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-lg fixed-top bg-dark" id="mainNav">
             <div class="container">
                 <!-- <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a> -->
-                <a class="navbar-brand" href="#page-top">Chat gpt 4.5</a>
+                <a class="navbar-brand" href="#page-top">Study Planner with Chat gpt 4.5</a>
                 
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -31,6 +31,7 @@
             </div>
         </nav>
         
+        <!-- 이미지, 데이터 입력을 위한 섹션 -->
         <section class="page-section" id="services">
             <div class="container mt-3">
 
@@ -46,7 +47,7 @@
                     <div class="col-md-6">
 
                         <!-- 취미 -->
-                        <div id="hobby">
+                        <div class="">
                             <label>[취미]</label>
                         </div>
                         <input id="hobby" name="name" type="text" placeholder="본인의 취미를 입력해주세요." required="" autofocus>
@@ -141,10 +142,11 @@
                     </div>
                 </div>
 
+                <!-- 기타 입력 -->
                 <div>
                     <div class="mt-3">
                         <form>
-                            <textarea id="textarea1" placeholder=" (필수 입력) 기타 참고사항이나 프로젝트 경험 등이 있으면 기술해주세요. + 질문 입력을 완료하신 후 아래 버튼을 누르시면 결과가 도출됩니다." required=""></textarea>
+                            <textarea id="textarea1" placeholder=" (필수 입력) 질문 입력을 완료하신 후 아래 버튼을 누르시면 결과가 도출됩니다. 기타 참고사항이나 프로젝트 경험 등을 함께 기술하시면 보다 정확한 답변을 얻을 수 있습니다." required=""></textarea>
                             <button id="button1" type="result" class="mt-2"><strong>스터디 플랜</strong> 도출하기</button>   
                         </form>
                     </div>
@@ -157,6 +159,7 @@
             </div>
         </section>
 
+        <!-- 입력 데이터 기반 답변을 출력하는 란 -->
         <div class="flex m-auto">
             <!-- <form>
                     <input id="input1" type="text" placeholder="질문을 입력해주세요." required="">
@@ -165,15 +168,14 @@
                 </form>
                 <br> 
             -->
-            <!-- <div> ▲ 질문 & 답변 ▼ </div>
+            <div> ▲ 질문 & 답변 ▼ </div>
             <div> ============= </div>
-            <br>
-            -->
 
-            <div class="chat_box chat_return">
+            <div class="return_question_response">
                 <h3 id="contents_question"></h3>
                 <br>
-                <textarea id="contents_response" placeholder="이 곳에 응답이 표시될 예정입니다." disabled></textarea>
+                <!-- <textarea id="contents_response" placeholder="이 곳에 응답이 표시될 예정입니다." disabled></textarea> -->
+                <div id="contents_response"></div>
             </div>
         </div>
     </main>
