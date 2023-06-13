@@ -166,9 +166,9 @@
         // 사용자가 선택한 입력 데이터를 객체를 만들어서 push
         // input 형식의 데이터만 포함. radio, checkbox 타입 선택정보 추가 구현예정
         const makeData = function () {
-            // 취미 데이터 읽어오기
-            let $hobbyInput = document.getElementById("hobby");
-            hobby = $hobbyInput.value;
+            // 목표 데이터 읽어오기
+            let $goalInput = document.getElementById("goal");
+            goal = $goalInput.value;
 
             // 기술스택 데이터 읽어오기
             let $techStackInput = document.getElementById("tech-stack");
@@ -176,19 +176,52 @@
         
             // 기타입력 및 최종질문 데이터 읽어오기
             let $etcInput = document.getElementById("textarea1");
-            etc = $etcInput.value
+            etc = $etcInput.value;
+
+            ////
+            // 성별 데이터 읽어오기 - select
+            let $genderInput = document.getElementById("gender");
+            gender = $genderInput.value;
+            console.log(gender)
+
+            // mbti 데이터 읽어오기 - select
+            let $mbtiInput = document.getElementById("mbti");
+            mbti = $mbtiInput.value;
+            console.log(mbti)
+
+            // 전공여부 데이터 읽어오기 - radio
+            // let $majorInput = document.getElementById("major");
+            let $majorInput = document.querySelector('input[name="major"]:checked');
+            major = $majorInput.value;
+
+            // 개발경험 데이터 읽어오기 - radio
+            let $devExpInput = document.querySelector('input[name="dev-exp"]:checked');
+            devExp = $devExpInput.value;
+
+            // 주 사용 언어 데이터 읽어오기 - select
+            let $mainLanInput = document.getElementById("main-lan");
+            mainLan = $mainLanInput.value;
+            console.log(mainLan)
         
+
             data.push({
                 role: "system",
-                content: `스터디 플랜을 만들어 줘. 취미:${hobby}, 기술스택:${techStack}, 기타정보:${etc} \n 이 데이터를 기반으로 스터디 플랜을 짜줘`,
+                content: `스터디 플랜을 만들어 줘. 목표:${goal}, 성별:${gender}, mbti:${mbti}, 전공여부:${major}, 개발경험:${devExp}, 주 사용 언어:${mainLan}, 기술스택:${techStack}, 기타정보:${etc} \n 이 데이터를 기반으로 스터디 플랜을 짜줘`,
             
                 role: "user",
-                content: `스터디 플랜을 만들어 줘. 취미:${hobby}, 기술스택:${techStack}, 기타정보:${etc} \n 이 데이터를 기반으로 스터디 플랜을 짜줘`
+                content: `스터디 플랜을 만들어 줘. 목표:${goal}, 성별:${gender}, mbti:${mbti}, 전공여부:${major}, 개발경험:${devExp}, 주 사용 언어:${mainLan}, 기술스택:${techStack}, 기타정보:${etc} \n 이 데이터를 기반으로 스터디 플랜을 짜줘`
             })
 
-            $hobbyInput.value = ''
+            $goalInput.value = ''
             $techStackInput.value = ''
             $etcInput.value = ''
+
+            $genderInput.value = '';
+            $mbtiInput.value = '';
+            $majorInput.checked = false;
+            $devExpInput.checked = false;
+            $mainLanInput.value = '';
+            
         };
 
 
@@ -219,7 +252,7 @@
 
                 for (const i of data) {
                     document.querySelector('#contents_question').innerHTML = "입력된 정보와 \
-                                                                              질문하신 [" + etc + "] \
+                                                                              설정하신 목표 [" + goal + "] \
                                                                               을(를) 토대로 구성한 답변은 아래와 같습니다."
                     document.querySelector('#contents_response').innerText = res.choices[0].message.content
                 }
