@@ -1,4 +1,10 @@
-<!-- use bootstrap -->
+<!-- use bootstrap 
+1. 템플릿 리터럴
+2. 서치바 구현
+3. 데이터 온전히 받아서 답변에 반영될 수 있도록 추가구현
+4. 페이지 두페이지 정도로 해서 이쁘게 만들기
+5. 목표 개발일정에 맞는 개발계획표 도출로 주제 변경
+-->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -37,70 +43,70 @@
 
                 <div class="row">
                     <!-- profile picture -->    
-                    <div class="col-md-6">
+                    <div class="first-half col-md-6">
                         <div class="flex width: 100%">
                             <img src="image0/profile.png" alt="image0/profile.png" id="picture" class="img-fluid rounded-full">
                         </div>
                     </div>
 
                     <!-- 정보 입력란 -->
-                    <div class="col-md-6">
+                    <div class="second-half col-md-6">
 
-                        <!-- 취미 -->
+                        <!-- 목표 -->
                         <div class="">
-                            <label>[취미]</label>
+                            <label>[목표]</label>
                         </div>
-                        <input id="hobby" name="name" type="text" placeholder="본인의 취미를 입력해주세요." required="" autofocus>
+                        <input id="goal" name="name" type="text" placeholder="본인의 목표를 입력해주세요." required="" autofocus>
                     
                         <!-- 성별 -->
-                        <div id="gender" class="mt-2">
+                        <div class="mt-2">
                             <!-- 드롭박스 -->
                             <label>[성별]</label>
                             <br>
                             <!-- <p><input type="submit" value="저장"></p> -->
-                            <select id="gender" name="gender" class="device-width">
-                                <option value="default"> --- </option>
-                                <option value="male"> 남성 </option>
-                                <option value="female"> 여성 </option>
-                                <option value="None"> 미정 </option>
+                            <select id="gender" class="device-width">
+                                <option value="default" selected> --- </option>
+                                <option value="남성"> 남성 </option>
+                                <option value="여성"> 여성 </option>
+                                <option value="미정"> 미정 </option>
                             </select>
                         </div>
 
                         <!-- MBTI -->
-                        <div id="mbti" class="mt-2">
+                        <div class="mt-2">
                             <!-- 드롭박스 -->
                             <label>[MBTI]</label>
                             <br>
                             <!-- <p><input type="submit" value="저장"></p> -->
-                            <select id="mbti" name="mbti" class="device-width">
-                                <option value="default"> ---- </option>
-                                <option value=""> ISTJ </option>
-                                <option value=""> ISFJ </option>
-                                <option value=""> INFJ </option>
-                                <option value=""> INTJ </option>
-                                <option value=""> ISTP </option>
-                                <option value=""> ISFP </option>
-                                <option value=""> INFP </option>
-                                <option value=""> INTP </option>
-                                <option value=""> ESTP </option>
-                                <option value=""> ESFP </option>
-                                <option value=""> ENFP </option>
-                                <option value=""> ENTP </option>
-                                <option value=""> ESTJ </option>
-                                <option value=""> ESFJ </option>
-                                <option value=""> ENFJ </option>
-                                <option value=""> ENTJ </option>
+                            <select id="mbti" class="device-width">
+                                <option value="default" selected> ---- </option>
+                                <option value="ISTJ"> ISTJ </option>
+                                <option value="ISFJ"> ISFJ </option>
+                                <option value="INFJ"> INFJ </option>
+                                <option value="INTJ"> INTJ </option>
+                                <option value="ISTP"> ISTP </option>
+                                <option value="ISFP"> ISFP </option>
+                                <option value="INFP"> INFP </option>
+                                <option value="INTP"> INTP </option>
+                                <option value="ESTP"> ESTP </option>
+                                <option value="ESFP"> ESFP </option>
+                                <option value="ENFP"> ENFP </option>
+                                <option value="ENTP"> ENTP </option>
+                                <option value="ESTJ"> ESTJ </option>
+                                <option value="ESFJ"> ESFJ </option>
+                                <option value="ENFJ"> ENFJ </option>
+                                <option value="ENTJ"> ENTJ </option>
                             </select>
                         </div>
 
                         <!-- 전공여부 -->
                         <div>
                             <div id="major" class="mt-3">
-                                <label>[전공여부]</label>
+                                <label>[전공]</label>
                             </div>
-                            <input type="radio"> 전공
-                            <input type="radio"> 비전공
-                            <input type="radio"> 유관전공
+                            <input type="radio" name="major"> 전공
+                            <input type="radio" name="major"> 비전공
+                            <input type="radio" name="major"> 유관전공
                             
                         </div>
 
@@ -109,27 +115,27 @@
                             <div id="dev-exp" class="mt-3">
                                 <label>[개발경험]</label>
                             </div>
-                            <input name="tech-stack" type="checkbox"> 있음
-                            <input name="tech-stack" type="checkbox"> 없음
+                            <input name="dev-exp" type="radio"> 있음
+                            <input name="dev-exp" type="radio"> 없음
                         </div>
 
                         <!-- 주요 사용 언어 -->
-                        <div id="main-lan" class="mt-3">
+                        <div class="mt-3">
                             <!-- 드롭박스 -->
                             <label>[주 사용 언어]</label>
                             <br>
                             <!-- <p><input type="submit" value="저장"></p> -->
-                            <select id="main-lan" name="main-lan" class="device-width">
-                                <option value="default"> ---- </option>
-                                <option value=""> python </option>
-                                <option value=""> java </option>
-                                <option value=""> javascript </option>
-                                <option value=""> C </option>
-                                <option value=""> C++ </option>
-                                <option value=""> GO </option>
-                                <option value=""> kotlin </option>
-                                <option value=""> html </option>
-                                <option value=""> 기타 </option>
+                            <select id="main-lan" class="device-width">
+                                <option value="default" selected> ---- </option>
+                                <option value="python"> python </option>
+                                <option value="java"> java </option>
+                                <option value="javascript"> javascript </option>
+                                <option value="C"> C </option>
+                                <option value="C++"> C++ </option>
+                                <option value="GO"> GO </option>
+                                <option value="kotlin"> kotlin </option>
+                                <option value="html"> html </option>
+                                <option value="기타"> 기타 </option>
                             </select>
                         </div>
 
@@ -145,31 +151,34 @@
                 <!-- 기타 입력 -->
                 <div>
                     <div class="mt-3">
-                        <form>
-                            <textarea id="textarea1" placeholder=" (필수 입력) 질문 입력을 완료하신 후 아래 버튼을 누르시면 결과가 도출됩니다. 기타 참고사항이나 프로젝트 경험 등을 함께 기술하시면 보다 정확한 답변을 얻을 수 있습니다." required=""></textarea>
-                            <button id="button1" type="result" class="mt-2"><strong>스터디 플랜</strong> 도출하기</button>   
+                        <form id="form">
+                            <input id="textarea1" placeholder=" (필수 입력) 질문 입력을 완료하신 후 아래 버튼을 누르시면 결과가 도출됩니다. 기타 참고사항이나 프로젝트 경험 등을 함께 기술하시면 보다 정확한 답변을 얻을 수 있습니다." required=""></input>
+                            <button id="button1" type="submit" class="mt-3"><strong>스터디 플랜</strong> 도출하기</button>   
                         </form>
                     </div>
                 
+                    <!--
                     <div class="placeholder-wave mt-2">
                         <span class="placeholder col-12 bg-warning"></span>
                     </div>
+                    -->
                 </div>
 
             </div>
         </section>
 
         <!-- 입력 데이터 기반 답변을 출력하는 란 -->
-        <div class="flex m-auto">
+        <div class="">
             <!-- <form>
                     <input id="input1" type="text" placeholder="질문을 입력해주세요." required="">
                     <button id="button1" type="submit">전송</button>
                     <br>
                 </form>
                 <br> 
-            -->
+            
             <div> ▲ 질문 & 답변 ▼ </div>
             <div> ============= </div>
+            -->
 
             <div class="return_question_response">
                 <h3 id="contents_question"></h3>
@@ -180,20 +189,22 @@
         </div>
     </main>
 
+    <!-- footer -->
+    <div>
+        <footer class="footer mt-3">
+            <small>© Copyright Your Website. All rights reserved.</small>
+            <address class="align-items-center">
+                <ul class="address-list">
+                    <a href="https://github.com/futuremaker0" target="_blank">Github</a>
+                    <a href="https://eureka-developer.tistory.com/" target="_blank">Blog</a>
+                    <a href="mailto:exmail@gnail.com" target="_blank">Email</a>
+                </ul>
+            </address>
+        </footer>
+    </div>
+
     <script src="javascript0/chat2.js"></script>
     <script src="javascript0/mousecursorLoading.js"></script>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <small>© Copyright Your Website. All rights reserved.</small>
-        <address class="align-items-center">
-            <ul class="address-list">
-                <a href="https://github.com/futuremaker0" target="_blank">Github</a>
-                <a href="https://eureka-developer.tistory.com/" target="_blank">Blog</a>
-                <a href="mailto:exmail@gnail.com" target="_blank">Email</a>
-            </ul>
-        </address>
-    </footer>
-
+    
 </body>
 </html>
