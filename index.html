@@ -3,7 +3,7 @@
 2. 서치바 구현
 3. 데이터 온전히 받아서 답변에 반영될 수 있도록 추가구현
 4. 페이지 두페이지 정도로 해서 이쁘게 만들기
-5. 목표 개발일정에 맞는 개발계획표 도출로 주제 변경
+5. 목표 개발일정에 맞는 개발계획표 도출로 주제 변경 검토
 -->
 
 <!DOCTYPE html>
@@ -28,18 +28,18 @@
         <nav class="navbar navbar-expand-lg fixed-top bg-dark" id="mainNav">
             <div class="container">
                 <!-- <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a> -->
-                <a class="navbar-brand" href="#page-top">Study Planner with Chat gpt 4.5</a>
+                <a class="navbar-brand" href="#page-top">A guide to achieving your goals</a>
                 
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </nav>
         
         <!-- 이미지, 데이터 입력을 위한 섹션 -->
         <section class="page-section" id="services">
-            <div class="container mt-3">
+            <div class="container mt-5">
 
                 <div class="row">
                     <!-- profile picture -->    
@@ -56,7 +56,7 @@
                         <div class="">
                             <label>[목표]</label>
                         </div>
-                        <input id="goal" name="name" type="text" placeholder="본인의 목표를 입력해주세요." required="" autofocus>
+                        <input id="goal" name="name" type="text" placeholder="개발 목표를 입력해주세요. (ex.영화추천 서비스 개발 및 런칭)" required="" autofocus>
                     
                         <!-- 성별 -->
                         <div class="mt-2">
@@ -134,6 +134,8 @@
                                 <option value="C++"> C++ </option>
                                 <option value="GO"> GO </option>
                                 <option value="kotlin"> kotlin </option>
+                                <option value="swift"> swift </option>
+                                <option value="scala"> scala </option>
                                 <option value="html"> html </option>
                                 <option value="기타"> 기타 </option>
                             </select>
@@ -143,17 +145,17 @@
                         <div class="mt-3" >
                             <label>[기술 스택]</label>
                         </div>
-                        <input id="tech-stack" name="tech-stack" type="text" placeholder="입력 정보 외 기술 스택을 입력해주세요." required="">
+                        <input id="tech-stack" name="tech-stack" type="text" placeholder="기타 보유중인 기술 스택을 입력해주세요. (ex. django, html, css) " required="">
                         
                     </div>
                 </div>
 
                 <!-- 기타 입력 -->
                 <div>
-                    <div class="mt-3">
+                    <div class="mt-5">
                         <form id="form">
-                            <input id="textarea1" placeholder=" (필수 입력) 질문 입력을 완료하신 후 아래 버튼을 누르시면 결과가 도출됩니다. 기타 참고사항이나 프로젝트 경험 등을 함께 기술하시면 보다 정확한 답변을 얻을 수 있습니다." required=""></input>
-                            <button id="button1" type="submit" class="mt-3"><strong>스터디 플랜</strong> 도출하기</button>   
+                            <input id="textarea1" placeholder=" (필수 입력) 질문 입력을 완료하신 후 아래 버튼을 누르시면 결과가 도출됩니다. 요구사항을 상세히 기술하시면 보다 정확한 답변을 얻으실 수 있습니다. (ex. OOO을 위한 방법(계획)을 알려줘.) " required="">
+                            <button id="button1" type="submit" class="mt-3"><strong>목표달성 가이드</strong> 추출하기</button>   
                         </form>
                     </div>
                 
